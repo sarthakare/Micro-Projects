@@ -1,0 +1,88 @@
+body {
+    margin: 0px;
+}
+
+/* container design */
+
+.hero {
+    background-color: #FFCD9E;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    padding: 5%;
+}
+
+#text-1{
+    font-size: 20px;
+}
+
+#bold{
+    font-size: 20px;
+}
+
+#email-id{
+    height: 5vh;
+    width: 20vw;
+    border-radius: 10px;
+    font-size: medium;
+    text-align: center;
+}
+
+#reg-button{
+    height: 5vh;
+    width: 10vw;
+    background: #000;
+    color: #FFFFFF;
+    font-size: medium;
+    border-radius: 10px;
+}
+
+#reg-button:hover{
+    color: #000;
+    background: #FFFFFF;
+    
+}
+
+#text-2{
+    color: #FFFFFF;
+}
+
+/* image design */
+#main-img{
+    height: 500px;
+    padding-right: 100px;
+}
+
+
+/* footer design */
+.footer {
+    background-color: #282828;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-left,
+.footer-right {
+    padding-top: 2%;
+}
+
+.footer-left{
+    padding-left: 5%;
+}
+
+.footer-right{
+    text-align: right;
+    padding-right: 5%;
+
+}
+
+ul {
+    color: #FFFFFF;
+    padding: 0px;
+}
+
+ul li{
+    padding-bottom: 5px;
+}
