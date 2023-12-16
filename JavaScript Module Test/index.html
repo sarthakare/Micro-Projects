@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the page -->
+    <title>Rock Paper Scissors</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Main game container -->
+    <div class="game">
+        <!-- Score display layout -->
+        <div class="score-layout">
+            <!-- Game title -->
+            <div id="text-1">ROCK <br> PAPER <br> SCISSORS</div>
+            <!-- User and computer scores -->
+            <div class="score">
+                <div id="user-score-text">User Score <br><span id="user-score">0</span></div>
+                <div id="computer-score-text">Computer Score <br><span id="computer-score">0</span></div>
+            </div>
+        </div>
+        <!-- User's choice container -->
+        <div id="user-choice">
+            <!-- Triangle layout for rock and paper images -->
+            <div class="triangle">
+                <img src="images/rock-img.png" alt="rock" id="rock" onclick="userChoice('rock')">
+                <img src="images/paper-img.png" alt="Paper" id="paper" onclick="userChoice('paper')">
+            </div>
+            <img src="images/scissor-img.png" alt="Scissor" id="scissors" onclick="userChoice('scissors')">
+        </div>
+
+        <div id="computer-choice">
+            <img src="images/rock-img.png" alt="rock" id="cc-rock" onclick="userChoice('rock')" style="display: none;">
+            <img src="images/paper-img.png" alt="Paper" id="cc-paper" onclick="userChoice('paper')" style="display: none;">
+            <img src="images/scissor-img.png" alt="Scissor" id="cc-scissors" onclick="userChoice('scissors')" style="display: none;">
+        </div>
+
+        <!-- Button to play again -->
+        <button id="play-again" onclick="playAgain()" style="display: none;">Play Again</button>
+
+        <!-- User and computer choices and outcome display -->
+        <div id="result">
+            <div id="user-option"></div>
+            <div id="computer-option"></div>
+            <div id="outcome"></div>
+        </div>
+
+        <!-- Button to show game rules -->
+        <button id="rules-button" onclick="showRules()">Rules</button>
+
+        <!-- Modal for displaying game rules -->
+        <div id="rules-modal" class="modal">
+            <div class="modal-content">
+                <!-- Close button for the rules modal -->
+                <span class="close" onclick="closeRules()">&times;</span>
+                <!-- Heading for game rules -->
+                <h2>Game Rules</h2>
+                <!-- Unordered list for displaying rules -->
+                <ul>
+                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock,
+                        paper, scissors.”</li>
+                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                    <li>If both players lay down the same hand, each player lays down another hand</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- External JavaScript file -->
+    <script src="script.js"></script>
+</body>
+
+</html>
