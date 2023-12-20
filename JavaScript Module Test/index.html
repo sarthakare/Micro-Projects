@@ -13,7 +13,7 @@
 
 <body>
     <!-- Main game container -->
-    <div class="game">
+    <div class="game" id="game-container">
         <!-- Score display layout -->
         <div class="score-layout">
             <!-- Game title -->
@@ -26,7 +26,6 @@
         </div>
         <!-- User's choice container -->
         <div id="user-choice">
-            <!-- Triangle layout for rock and paper images -->
             <div class="triangle">
                 <img src="images/rock-img.png" alt="rock" id="rock" onclick="userChoice('rock')">
                 <img src="images/paper-img.png" alt="Paper" id="paper" onclick="userChoice('paper')">
@@ -34,41 +33,68 @@
             <img src="images/scissor-img.png" alt="Scissor" id="scissors" onclick="userChoice('scissors')">
         </div>
 
-        <div id="computer-choice">
-            <img src="images/rock-img.png" alt="rock" id="cc-rock" onclick="userChoice('rock')" style="display: none;">
-            <img src="images/paper-img.png" alt="Paper" id="cc-paper" onclick="userChoice('paper')" style="display: none;">
-            <img src="images/scissor-img.png" alt="Scissor" id="cc-scissors" onclick="userChoice('scissors')" style="display: none;">
-        </div>
-
-        <!-- Button to play again -->
-        <button id="play-again" onclick="playAgain()" style="display: none;">Play Again</button>
-
-        <!-- User and computer choices and outcome display -->
         <div id="result">
-            <div id="user-option"></div>
-            <div id="computer-option"></div>
-            <div id="outcome"></div>
-        </div>
-
-        <!-- Button to show game rules -->
-        <button id="rules-button" onclick="showRules()">Rules</button>
-
-        <!-- Modal for displaying game rules -->
-        <div id="rules-modal" class="modal">
-            <div class="modal-content">
-                <!-- Close button for the rules modal -->
-                <span class="close" onclick="closeRules()">&times;</span>
-                <!-- Heading for game rules -->
-                <h2>Game Rules</h2>
-                <!-- Unordered list for displaying rules -->
-                <ul>
-                    <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
-                    <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock,
-                        paper, scissors.”</li>
-                    <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
-                    <li>If both players lay down the same hand, each player lays down another hand</li>
-                </ul>
+            <!-- User and computer choices and outcome display -->
+            <div>
+                <span id="YoursChoice" style="display: none;">You Picked</span>
+                <img src="images/rock-img.png" alt="rock" id="uc-rock" style="display: none;">
+                <img src="images/paper-img.png" alt="Paper" id="uc-paper" style="display: none;">
+                <img src="images/scissor-img.png" alt="Scissor" id="uc-scissors" style="display: none;">
             </div>
+            <div>
+                <!-- winner image -->
+                <!-- Button to play again -->
+                <div id="outcome"></div>
+                <button id="play-again" onclick="playAgain()" style="display: none;">Play Again</button>
+            </div>
+            <div>
+                <span id="ComputerChoice" style="display: none;">PC Picked</span>
+                <img src="images/rock-img.png" alt="rock" id="cc-rock" style="display: none;">
+                <img src="images/paper-img.png" alt="Paper" id="cc-paper" style="display: none;">
+                <img src="images/scissor-img.png" alt="Scissor" id="cc-scissors" style="display: none;">
+            </div>
+        </div>
+    </div>
+    <div >
+        <!-- winner image animations-->
+        <div class="confetti" id="confetti" style="display: none;">
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+            <div class="confetti-piece"></div>
+        </div>
+        <img id="winning-img" src="images/winnng-img.png" alt="winning image" style="display: none;">
+        <button id="play-game-again" onclick="playGameAgain()" style="display: none;">Play again</button>
+    </div>
+    <!-- Button to show game rules -->
+    <button id="rules-button" onclick="showRules()">Rules</button>
+    <!-- next button -->
+    <button id="next-button" onclick="next()" style="display: none;">Next</button>
+
+    <!-- Modal for displaying game rules -->
+    <div id="rules-modal" class="modal">
+        <div class="modal-content">
+            <!-- Close button for the rules modal -->
+            <span class="close" onclick="closeRules()">&times;</span>
+            <!-- Heading for game rules -->
+            <h2>Game Rules</h2>
+            <!-- Unordered list for displaying rules -->
+            <ul>
+                <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock,
+                    paper, scissors.”</li>
+                <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                <li>If both players lay down the same hand, each player lays down another hand</li>
+            </ul>
         </div>
     </div>
     <!-- External JavaScript file -->

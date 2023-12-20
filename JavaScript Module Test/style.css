@@ -10,6 +10,7 @@ body {
 
 .score-layout {
     display: flex;
+    justify-content: space-between;
     border-color: #ffffff;
     border: 3px solid #ffffff;
     border-radius: 20px;
@@ -17,7 +18,7 @@ body {
 }
 
 #text-1 {
-    margin: 20px;
+    margin: 20px 180px 20px 40px;
     font-size: 2.5em;
     color: #ffffff;
 }
@@ -42,6 +43,7 @@ body {
     display: block;
 }
 
+/* users choice */
 #user-choice {
     display: flex;
     flex-direction: column;
@@ -52,14 +54,13 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-bottom: 20px;
 }
 
 #user-choice img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    margin: 50px;
+    margin: 39px;
     cursor: pointer;
 }
 
@@ -79,34 +80,74 @@ body {
 }
 
 
-/* computer choice */
-#computer-choice {
+/* result */
+#YoursChoice {
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+#ComputerChoice {
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+#result {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
 }
 
-#computer-choice img {
+#result img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     margin: 50px;
-    cursor: pointer;
 }
 
-#cc-rock {
+#cc-rock,
+#uc-rock {
     border: 14px solid #0074B6;
     background-color: #ffffff;
 }
 
-#cc-paper {
+#cc-paper,
+#uc-paper {
     border: 14px solid #FFA943;
     background-color: #ffffff;
 }
 
-#cc-scissors {
+#cc-scissors,
+#uc-scissors {
     border: 14px solid #BD00FF;
     background-color: #ffffff;
+}
+
+#outcome {
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+#play-again {
+    background-color: #ffffff;
+    color: #6B6B6B;
+    font-size: 15px;
+    border-color: transparent;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 20px 120px;
+    cursor: pointer;
+}
+
+#play-again:hover {
+    background-color: #6B6B6B;
+    color: #ffffff;
 }
 
 /* Styles for Rules Button */
@@ -121,6 +162,10 @@ body {
     border-radius: 10px;
     font-size: large;
     cursor: pointer;
+}
+
+#rules-button.move {
+    margin-right: 100px;
 }
 
 /* Styles for Rules Modal */
@@ -174,4 +219,235 @@ body {
 .modal-content li {
     margin-bottom: 10px;
     color: #ffffff;
+}
+
+#next-button {
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: large;
+    cursor: pointer;
+}
+
+#winning-img-div {
+    width: 100vw;
+    height: 80vh;
+    display: none;
+}
+
+#play-game-again {
+    position: relative;
+    top: 85vh;
+    background-color: #ffffff;
+    color: #6B6B6B;
+    font-size: 15px;
+    border-color: transparent;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 20px 120px;
+    cursor: pointer;
+}
+
+#play-game-again:hover {
+    background-color: #6B6B6B;
+    color: #ffffff;
+}
+
+.confetti {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background: #ffd300;
+    top: 0;
+    opacity: 0;
+}
+
+.confetti-piece:nth-child(1) {
+    left: 7%;
+    transform: rotate(-40deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 182ms;
+    animation-duration: 1116ms;
+}
+
+.confetti-piece:nth-child(2) {
+    left: 14%;
+    transform: rotate(4deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 161ms;
+    animation-duration: 1076ms;
+}
+
+.confetti-piece:nth-child(3) {
+    left: 21%;
+    transform: rotate(-51deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 481ms;
+    animation-duration: 1103ms;
+}
+
+.confetti-piece:nth-child(4) {
+    left: 28%;
+    transform: rotate(61deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 334ms;
+    animation-duration: 708ms;
+}
+
+.confetti-piece:nth-child(5) {
+    left: 35%;
+    transform: rotate(-52deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 302ms;
+    animation-duration: 776ms;
+}
+
+.confetti-piece:nth-child(6) {
+    left: 42%;
+    transform: rotate(38deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 180ms;
+    animation-duration: 1168ms;
+}
+
+.confetti-piece:nth-child(7) {
+    left: 49%;
+    transform: rotate(11deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 395ms;
+    animation-duration: 1200ms;
+}
+
+.confetti-piece:nth-child(8) {
+    left: 56%;
+    transform: rotate(49deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 14ms;
+    animation-duration: 887ms;
+}
+
+.confetti-piece:nth-child(9) {
+    left: 63%;
+    transform: rotate(-72deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 149ms;
+    animation-duration: 805ms;
+}
+
+.confetti-piece:nth-child(10) {
+    left: 70%;
+    transform: rotate(10deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 351ms;
+    animation-duration: 1059ms;
+}
+
+.confetti-piece:nth-child(11) {
+    left: 77%;
+    transform: rotate(4deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 307ms;
+    animation-duration: 1132ms;
+}
+
+.confetti-piece:nth-child(12) {
+    left: 84%;
+    transform: rotate(42deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 464ms;
+    animation-duration: 776ms;
+}
+
+.confetti-piece:nth-child(13) {
+    left: 91%;
+    transform: rotate(-72deg);
+    animation: makeItRain 1000ms infinite ease-out;
+    animation-delay: 429ms;
+    animation-duration: 818ms;
+}
+
+.confetti-piece:nth-child(odd) {
+    background: #7431e8;
+}
+
+.confetti-piece:nth-child(even) {
+    z-index: 1;
+}
+
+.confetti-piece:nth-child(4n) {
+    width: 5px;
+    height: 12px;
+    animation-duration: 2000ms;
+}
+
+.confetti-piece:nth-child(3n) {
+    width: 3px;
+    height: 10px;
+    animation-duration: 2500ms;
+    animation-delay: 1000ms;
+}
+
+.confetti-piece:nth-child(4n-7) {
+    background: red;
+}
+
+@keyframes makeItRain {
+    from {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(350px);
+    }
+}
+
+
+#winning-img {
+    /* animation properties */
+    animation-name: my-animation;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    /* other properties */
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+@keyframes my-animation {
+    from {
+        background-color: #ff7a59;
+        width: 1000px;
+        top: 10px;
+    }
+
+    to {
+        background-color: #33475b;
+        width: 500px;
+        top: 100px;
+    }
 }
